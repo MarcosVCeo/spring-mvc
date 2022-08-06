@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- CSS only -->
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="card" th:each="pedido : ${pedidos}">
+        <div class="card-header" th:text="${pedido.nomeProduto}"></div>
+
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12 col-md-8 mb-3">
+                    <div>Nome do Produto: <span th:text="${pedido.nomeProduto}"></span></div>
+                    <div class="row">
+                        <div class="col-12 col-md-6">Valor: <span th:text="${pedido.valor}"></span></div>
+                        <div class="col-12 col-md-6">Data da entrega: <span th:text="${pedido.dataEntrega}"></span></div>
+                    </div>
+
+                    <div>Produto</div>
+                    <div><input class="form-control" th:value="${pedido.ulrProduto}" readonly="true"/></div>
+
+                    <div>Descrição</div>
+                    <div>
+                        <textarea class="form-control" th:text="${pedido.descricao}" readonly="true"></textarea>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-4">
+                    <div>
+                        <img class="img-thumbnail" th:src="${pedido.urlImagem}">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</body>
+</html>
