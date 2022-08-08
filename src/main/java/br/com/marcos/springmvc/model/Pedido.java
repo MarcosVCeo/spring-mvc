@@ -1,9 +1,16 @@
 package br.com.marcos.springmvc.model;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "pedidos")
 public class Pedido {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
     private String nomeProduto;
     private BigDecimal valor;
@@ -11,6 +18,10 @@ public class Pedido {
     private String ulrProduto;
     private String urlImagem;
     private String descricao;
+
+    public Pedido() {
+
+    }
 
     public Pedido(String nomeProduto, BigDecimal valor, LocalDate dataEntrega, String ulrProduto, String urlImagem, String descricao) {
         this.nomeProduto = nomeProduto;
