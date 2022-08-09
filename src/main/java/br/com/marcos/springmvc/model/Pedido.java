@@ -15,9 +15,12 @@ public class Pedido {
     private String nomeProduto;
     private BigDecimal valor;
     private LocalDate dataEntrega;
-    private String ulrProduto;
+    private String urlProduto;
     private String urlImagem;
     private String descricao;
+
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
     public Pedido() {
 
@@ -27,7 +30,7 @@ public class Pedido {
         this.nomeProduto = nomeProduto;
         this.valor = valor;
         this.dataEntrega = dataEntrega;
-        this.ulrProduto = ulrProduto;
+        this.urlProduto = ulrProduto;
         this.urlImagem = urlImagem;
         this.descricao = descricao;
     }
@@ -56,12 +59,12 @@ public class Pedido {
         this.dataEntrega = dataEntrega;
     }
 
-    public String getUlrProduto() {
-        return ulrProduto;
+    public String getUrlProduto() {
+        return urlProduto;
     }
 
-    public void setUlrProduto(String ulrProduto) {
-        this.ulrProduto = ulrProduto;
+    public void setUrlProduto(String ulrProduto) {
+        this.urlProduto = ulrProduto;
     }
 
     public String getUrlImagem() {
@@ -78,5 +81,13 @@ public class Pedido {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public StatusPedido getStatus() {
+        return status;
+    }
+
+    public void setStatus(StatusPedido status) {
+        this.status = status;
     }
 }

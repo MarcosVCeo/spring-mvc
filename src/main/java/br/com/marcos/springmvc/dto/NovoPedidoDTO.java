@@ -2,15 +2,24 @@ package br.com.marcos.springmvc.dto;
 
 import br.com.marcos.springmvc.model.Pedido;
 
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 public class NovoPedidoDTO {
 
-    private String nomeProduto;
-    private String urlProduto;
-    private String urlImagem;
-    private String descricao;
+    @NotBlank
+    public String nomeProduto;
+
+    @NotBlank
+    public String urlProduto;
+
+    @NotBlank
+    public String urlImagem;
+    public String descricao;
+
+    public NovoPedidoDTO() {
+    }
 
     public String getNomeProduto() {
         return nomeProduto;
